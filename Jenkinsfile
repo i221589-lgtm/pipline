@@ -10,6 +10,11 @@ pipeline {
         }
 
         stage('Test') {
+            when{
+                expression{
+                    return env.BUILD_NUMBER.toInteger() > 1
+                }
+            }
             steps {
                 echo 'Testing...'
                 // Commands for testing go here
