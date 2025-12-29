@@ -23,4 +23,13 @@ pipeline {
             }
         }
     }
+    post{
+        always {
+            echo 'Pipeline finished (always runs)'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+
+    }
 }
