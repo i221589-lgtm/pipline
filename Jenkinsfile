@@ -18,7 +18,7 @@ pipeline {
         stage('Test') {
             when{
                 expression{
-                    return env.BUILD_NUMBER.toInteger() > 1
+                    return params.executeTests == true
                 }
             }
             steps {
